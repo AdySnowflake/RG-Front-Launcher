@@ -1,21 +1,10 @@
 from window_import import *
 
-
-
 # 定义变量
 name1 = "Official-ESRGAN"#executor
 name2 = "Upscayl"
 
-def choose_esrgan(
-    root,
-    title_font,
-    button_font,
-    bg_color="#ffffff",
-    title_color="#000000",
-    button_bg="#000000",
-    button_fg="white",
-    button_active_bg="#2980b9"
-):
+def choose_esrgan(root):
     # 创建第二个窗口
     root2 = tk.Toplevel(root)
     root2.title("Real-ESRGAN 模式")
@@ -24,6 +13,9 @@ def choose_esrgan(
 
     root2.configure(bg=bg_color)
     root2.resizable(False, False)
+
+    # 调用取得自定义字体
+    title_font, button_font = get_fonts()
 
     # 添加标题框架
     title_frame = tk.Frame(root2, bg=bg_color)

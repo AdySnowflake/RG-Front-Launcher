@@ -2,6 +2,19 @@ import tkinter as tk
 from tkinter import messagebox
 import tkinter.font as tkfont
 
+# 定义颜色
+bg_color = "#ffffff"  # 背景色
+title_color = "#000000"  # 标题颜色
+button_bg = "#000000"  # 按钮背景色
+button_fg = "white"  # 按钮文字颜色
+button_active_bg = "#2980b9"  # 按钮激活时的背景色
+
+# 创建自定义字体
+def get_fonts():
+    title_font = tkfont.Font(family="HarmonyOS Sans SC", size=14)
+    button_font = tkfont.Font(family="Montserrat Medium", size=10)
+    return title_font, button_font
+
 # 窗口居中
 def center_window(win):
     win.update_idletasks()
