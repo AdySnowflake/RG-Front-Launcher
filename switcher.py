@@ -18,7 +18,7 @@ def button1_clicked():
 
 def button2_clicked():
     messagebox.showinfo("提示", f"你选择了 {model2} 模型")
-    # root.destroy()  # 关闭窗口并结束程序
+    root.iconify()        # 最小化窗口
 
 # 创建主窗口
 root = tk.Tk()

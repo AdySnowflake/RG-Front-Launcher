@@ -1,8 +1,8 @@
 from window_import import *
-
+# from switcher import model1, model2
 # 定义变量
-name1 = "Official-ESRGAN"#executor
-name2 = "Upscayl"
+executor1 = "Official-NCNN"
+executor2 = "Upscayl-NCNN"
 
 def choose_esrgan(root):
     # 创建第二个窗口
@@ -22,7 +22,7 @@ def choose_esrgan(root):
     title_frame.pack(pady=15)
 
     # 创建说明标签
-    label = tk.Label(title_frame, text="请选择 Real-ESRGAN 的运行模式：",
+    label = tk.Label(title_frame, text="请选择 Real-ESRGAN 执行器：",
                      font=title_font, bg=bg_color, fg=title_color, pady=15)
     label.pack()
 
@@ -31,23 +31,23 @@ def choose_esrgan(root):
     button_frame.pack(pady=20)
 
     def button1_clicked():
-        # messagebox.showinfo("提示", f"你选择了 {button_a_text}")
+        messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor1} 执行器")
         root2.destroy()
         # root.deiconify()  # 重新显示主窗口
 
     def button2_clicked():
-        # messagebox.showinfo("提示", f"你选择了 {button_b_text}")
+        messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor2} 执行器")
         root2.destroy()
         # root.deiconify()  # 重新显示主窗口
 
     # 创建两个按钮
-    button1 = tk.Button(button_frame, text=name1, command=button1_clicked,
+    button1 = tk.Button(button_frame, text=executor1, command=button1_clicked,
                          width=12, font=button_font, bg=button_bg, fg=button_fg,
                          activebackground=button_active_bg, relief=tk.FLAT,
                          borderwidth=2, cursor="hand2")
     button1.pack(side=tk.LEFT, padx=20)
 
-    button2 = tk.Button(button_frame, text=name2, command=button2_clicked,
+    button2 = tk.Button(button_frame, text=executor2, command=button2_clicked,
                          width=12, font=button_font, bg=button_bg, fg=button_fg,
                          activebackground=button_active_bg, relief=tk.FLAT,
                          borderwidth=2, cursor="hand2")
