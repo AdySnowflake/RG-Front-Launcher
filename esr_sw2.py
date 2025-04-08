@@ -45,7 +45,7 @@ def choose_esrgan(root):
     button2 = add_button(button_frame, executor2, button2_clicked, button_font)
 
     # 添加底部提示信息
-    footer = tk.Label(root2, text="选择后将返回主窗口", font=("Microsoft YaHei", 8),
+    footer = tk.Label(root2, text="选择后将自动应用并最小化", font=("Microsoft YaHei", 8),
                       bg=bg_color, fg="#7f8c8d")
     footer.pack(pady=10)
 

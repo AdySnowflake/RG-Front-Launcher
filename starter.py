@@ -3,8 +3,10 @@ import time
 import psutil
 import os
 
+exe_path = r"E:\Downloads\IDM\realesrgan-gui-windows-bundled-v0.2.5.0\realesrgan-gui.exe"
+
 class ExeController:
-    def __init__(self, exe_path):
+    def __init__(self):
         self.exe_path = exe_path
         self.process = None
         self.exe_name = os.path.basename(exe_path)
@@ -30,11 +32,11 @@ class ExeController:
         if not found:
             print("未找到目标进程，可能已退出。")
 
-# 示例使用
-if __name__ == "__main__":
-    exe_path = r"E:\Downloads\IDM\realesrgan-gui-windows-bundled-v0.2.5.0\realesrgan-gui.exe"
-    controller = ExeController(exe_path)
 
-    controller.start()
+if __name__ == "__main__":
+
+    controller = ExeController()
+
+    # controller.start()
     time.sleep(5)
     controller.stop()
