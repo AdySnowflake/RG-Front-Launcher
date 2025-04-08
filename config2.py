@@ -1,7 +1,19 @@
 import configparser
 import os
 
-def modify_config(file_path, section, key, value):
+flag = 2
+file_path = "config.ini"
+section = "Config"
+key = "upscaler"
+path = [
+    "./realesrgan-ncnn-vulkan.exe",  # flag = 1 ，预期值
+    "./upscayl-bin.exe",             # flag = 2
+    "./realcugan-ncnn-vulkan.exe"    # flag = 3
+]
+# value = path[flag]
+
+def modify_config(flag):
+    value = path[flag-1]
     config = configparser.ConfigParser()
 
     # 读取 config.ini 文件
@@ -21,15 +33,4 @@ def modify_config(file_path, section, key, value):
 
 
 if __name__ == "__main__":
-    flag = 1
-    file_path = "config.ini"
-    section = "Config"
-    key = "upscaler"
-    path = [
-        "./realesrgan-ncnn-vulkan.exe",  # flag = 1
-        "./upscayl-bin.exe",             # flag = 2
-        "./realcugan-ncnn-vulkan.exe"    # flag = 3
-    ]
-    value = path[flag]
-
-    modify_config(file_path, section, key, value)
+    modify_config(flag)
