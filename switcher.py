@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 import tkinter.font as tkfont
 
+from esrgan_switcher import choose_esrgan
+
 # 定义模型变量
 model1_name = "Real-ESRGAN"
 model2_name = "Real-CUGAN"
@@ -19,6 +21,17 @@ button_active_bg = "#2980b9"  # 按钮激活时的背景色
 
 def button1_clicked():
     print("Hello World")  # 模拟写入配置
+    choose_esrgan(
+        root=root,
+        title_font=title_font,
+        button_font=button_font,
+        bg_color=bg_color,
+        title_color=title_color,
+        button_bg=button_bg,
+        button_fg=button_fg,
+        button_active_bg=button_active_bg
+    )
+    # root.iconify()
     root.iconify()        # 最小化窗口
 
 def button2_clicked():
@@ -28,14 +41,12 @@ def button2_clicked():
 # 创建主窗口
 root = tk.Tk()
 root.title("超分模型选择")
-root.geometry("400x200")  # 稍微增加窗口大小
+root.geometry("400x200")  # 窗口大小
 root.configure(bg=bg_color)
 root.resizable(False, False)  # 固定窗口大小
 
 # 创建自定义字体
-# title_font = tkfont.Font(family="Microsoft YaHei", size=14, weight="bold")
 title_font = tkfont.Font(family="HarmonyOS Sans SC", size=14, weight="normal")
-# button_font = tkfont.Font(family="Microsoft YaHei", size=10)
 button_font = tkfont.Font(family="Montserrat Medium", size=10, weight="normal")
 
 # 添加标题框架
@@ -74,3 +85,5 @@ root.eval('tk::PlaceWindow . center')
 
 # 运行主循环
 root.mainloop()
+
+
