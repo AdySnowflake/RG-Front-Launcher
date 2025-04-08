@@ -6,8 +6,6 @@ from window_import import *
 name1 = "Official-ESRGAN"#executor
 name2 = "Upscayl"
 
-
-# 可重用的窗口弹出函数
 def choose_esrgan(
     root,
     title_font,
@@ -22,6 +20,8 @@ def choose_esrgan(
     root2 = tk.Toplevel(root)
     root2.title("Real-ESRGAN 模式")
     root2.geometry("400x200")
+
+
     root2.configure(bg=bg_color)
     root2.resizable(False, False)
 
@@ -41,12 +41,12 @@ def choose_esrgan(
     def button1_clicked():
         # messagebox.showinfo("提示", f"你选择了 {button_a_text}")
         root2.destroy()
-        root.deiconify()  # 重新显示主窗口
+        # root.deiconify()  # 重新显示主窗口
 
     def button2_clicked():
         # messagebox.showinfo("提示", f"你选择了 {button_b_text}")
         root2.destroy()
-        root.deiconify()  # 重新显示主窗口
+        # root.deiconify()  # 重新显示主窗口
 
     # 创建两个按钮
     button1 = tk.Button(button_frame, text=name1, command=button1_clicked,
@@ -67,7 +67,9 @@ def choose_esrgan(
     footer.pack(pady=10)
 
     # 居中显示窗口
-    root2.eval('tk::PlaceWindow . center')
+    # root.eval('tk::PlaceWindow . center')
+    toplevel_with_tcl(root, root2)
+    center_window(root)
 
     # 设置窗口为模态，阻止与其他窗口交互
     root2.transient(root)

@@ -29,8 +29,7 @@ def button1_clicked():
         button_fg=button_fg,
         button_active_bg=button_active_bg
     )
-    # root.iconify()
-    root.iconify()        # 最小化窗口
+    # root.iconify()        # 最小化窗口
 
 def button2_clicked():
     messagebox.showinfo("提示", f"你选择了 {model2} 模型")
@@ -40,6 +39,7 @@ def button2_clicked():
 root = tk.Tk()
 root.title("超分模型选择")
 root.geometry("400x200")  # 窗口大小
+# center_window(root)
 root.configure(bg=bg_color)
 root.resizable(False, False)  # 固定窗口大小
 
