@@ -1,12 +1,10 @@
-import tkinter as tk
-from tkinter import messagebox
-import tkinter.font as tkfont
+from window_import import *
 
 from esrgan_switcher import choose_esrgan
 
-# 定义模型变量
-model1_name = "Real-ESRGAN"
-model2_name = "Real-CUGAN"
+# 定义变量
+model1 = "Real-ESRGAN"
+model2 = "Real-CUGAN"
 
 # 定义颜色
 bg_color = "#ffffff"  # 背景色
@@ -16,7 +14,7 @@ button_fg = "white"  # 按钮文字颜色
 button_active_bg = "#2980b9"  # 按钮激活时的背景色
 
 # def button1_clicked():
-#     messagebox.showinfo("提示", f"你选择了 {model1_name} 模型")
+#     messagebox.showinfo("提示", f"你选择了 {model1} 模型")
 #     # root.destroy()  # 关闭窗口并结束程序
 
 def button1_clicked():
@@ -35,7 +33,7 @@ def button1_clicked():
     root.iconify()        # 最小化窗口
 
 def button2_clicked():
-    messagebox.showinfo("提示", f"你选择了 {model2_name} 模型")
+    messagebox.showinfo("提示", f"你选择了 {model2} 模型")
     # root.destroy()  # 关闭窗口并结束程序
 
 # 创建主窗口
@@ -63,13 +61,13 @@ button_frame = tk.Frame(root, bg=bg_color)
 button_frame.pack(pady=20)
 
 # 创建两个按钮，使用变量作为按钮文本
-button1 = tk.Button(button_frame, text=model1_name, command=button1_clicked,
+button1 = tk.Button(button_frame, text=model1, command=button1_clicked,
                    width=12, font=button_font, bg=button_bg, fg=button_fg,
                    activebackground=button_active_bg, relief=tk.FLAT,
                    borderwidth=2, cursor="hand2")
 button1.pack(side=tk.LEFT, padx=20)
 
-button2 = tk.Button(button_frame, text=model2_name, command=button2_clicked,
+button2 = tk.Button(button_frame, text=model2, command=button2_clicked,
                    width=12, font=button_font, bg=button_bg, fg=button_fg,
                    activebackground=button_active_bg, relief=tk.FLAT,
                    borderwidth=2, cursor="hand2")

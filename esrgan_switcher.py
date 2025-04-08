@@ -1,11 +1,9 @@
-import tkinter as tk
-from tkinter import messagebox
-import tkinter.font as tkfont
+from window_import import *
 
 
 
 # 定义变量
-name1 = "Official-ESRGAN"
+name1 = "Official-ESRGAN"#executor
 name2 = "Upscayl"
 
 
