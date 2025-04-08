@@ -1,11 +1,6 @@
 from sw2 import launch_window
-
 from config2 import modify_config
-
 from starter import ExeController
-
-# launch_window()
-# flag = 0
 
 
 def main():
@@ -17,17 +12,20 @@ def choice(flag):
     print("hello world")
     print(flag)
     modify_config(flag)
-    # controller.stop()
     control_exe()
 
+
 def control_exe():
+    global first
     controller = ExeController()
-    if (1):
+    if (first):
         controller.stop()
     controller.start()
-    # time.sleep(5)
 
+    print(f"first: {first}")
+    first += 1
 
 
 if __name__ == "__main__":
+    first = 0  # 记录是否第一次运行
     main()
