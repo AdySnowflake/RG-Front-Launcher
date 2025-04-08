@@ -1,10 +1,7 @@
 import configparser
 import os
 
-flag = 1
-
-
-def modify_config(file_path, section, key, value, create_if_missing=True):
+def modify_config(file_path, section, key, value):
     config = configparser.ConfigParser()
 
     # 读取 config.ini 文件
@@ -13,14 +10,6 @@ def modify_config(file_path, section, key, value, create_if_missing=True):
     else:
         print(f"文件不存在: {file_path}")
         return
-
-    # 检查 section 是否存在
-    if not config.has_section(section):
-        if create_if_missing:
-            config.add_section(section)
-        else:
-            print(f"Section 不存在: {section}")
-            return
 
     # 设置键值
     config.set(section, key, value)
@@ -31,8 +20,8 @@ def modify_config(file_path, section, key, value, create_if_missing=True):
     print(f"已修改 {file_path} 中 [{section}] 的 {key} = {value}")
 
 
-# 示例调用
 if __name__ == "__main__":
+    flag = 1
     file_path = "config.ini"
     section = "Config"
     key = "upscaler"
