@@ -1,5 +1,5 @@
 from window_import import *
-# from switcher import model1, model2
+
 # 定义变量
 executor1 = "Official-NCNN"
 executor2 = "Upscayl-NCNN"
@@ -9,8 +9,6 @@ def choose_esrgan(root):
     root2 = tk.Toplevel(root)
     root2.title("Real-ESRGAN 模式")
     root2.geometry("400x200")
-
-
     root2.configure(bg=bg_color)
     root2.resizable(False, False)
 
@@ -32,24 +30,19 @@ def choose_esrgan(root):
 
     def button1_clicked():
         messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor1} 执行器")
+        print("Hello World")
         root2.destroy()
-        # root.deiconify()  # 重新显示主窗口
+        root.iconify()  # 最小化主窗口
 
     def button2_clicked():
         messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor2} 执行器")
+        print("Hello World")
         root2.destroy()
-        # root.deiconify()  # 重新显示主窗口
+        root.iconify()  # 最小化主窗口
 
-    # 创建两个按钮
-    # button1 = tk.Button(button_frame, text=executor1, command=button1_clicked,
-    #                      width=12, font=button_font, bg=button_bg, fg=button_fg,
-    #                      activebackground=button_active_bg, relief=tk.FLAT,
-    #                      borderwidth=2, cursor="hand2")
-    # button1.pack(side=tk.LEFT, padx=20)
-
+    # 创建两个按钮，使用变量作为按钮文本
     button1 = add_button(button_frame, executor1, button1_clicked, button_font)
     button2 = add_button(button_frame, executor2, button2_clicked, button_font)
-
 
     # 添加底部提示信息
     footer = tk.Label(root2, text="选择后将返回主窗口", font=("Microsoft YaHei", 8),
@@ -65,5 +58,3 @@ def choose_esrgan(root):
     root2.transient(root)
     root2.grab_set()
 
-    # 当窗口关闭时恢复主窗口
-    # root2.protocol("WM_DELETE_WINDOW", lambda: [root2.destroy(), root.deiconify()])

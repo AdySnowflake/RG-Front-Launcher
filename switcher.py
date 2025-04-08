@@ -5,26 +5,19 @@ from esrgan_switcher import choose_esrgan
 model1 = "Real-ESRGAN"
 model2 = "Real-CUGAN"
 
-
-
-# def button1_clicked():
-#     messagebox.showinfo("提示", f"你选择了 {model1} 模型")
-#     # root.destroy()  # 关闭窗口并结束程序
-
 def button1_clicked():
     print("Hello World")  # 模拟写入配置
     choose_esrgan(root)
-    # root.iconify()        # 最小化窗口
 
 def button2_clicked():
     messagebox.showinfo("提示", f"你选择了 {model2} 模型")
+    print("Hello World")
     root.iconify()        # 最小化窗口
 
 # 创建主窗口
 root = tk.Tk()
 root.title("超分模型选择")
 root.geometry("400x200")  # 窗口大小
-# center_window(root)
 root.configure(bg=bg_color)
 root.resizable(False, False)  # 固定窗口大小
 
@@ -53,7 +46,6 @@ button_frame.pack(pady=20)
 
 button1 = add_button(button_frame, model1, button1_clicked, button_font)
 button2 = add_button(button_frame, model2, button2_clicked, button_font)
-
 
 # 添加底部提示信息
 footer = tk.Label(root, text="选择后将自动应用并最小化", font=("Microsoft YaHei", 8),
