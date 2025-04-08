@@ -45,17 +45,15 @@ button_frame = tk.Frame(root, bg=bg_color)
 button_frame.pack(pady=20)
 
 # 创建两个按钮，使用变量作为按钮文本
-button1 = tk.Button(button_frame, text=model1, command=button1_clicked,
-                   width=12, font=button_font, bg=button_bg, fg=button_fg,
-                   activebackground=button_active_bg, relief=tk.FLAT,
-                   borderwidth=2, cursor="hand2")
-button1.pack(side=tk.LEFT, padx=20)
+# button1 = tk.Button(button_frame, text=model1, command=button1_clicked,
+#                    width=12, font=button_font, bg=button_bg, fg=button_fg,
+#                    activebackground=button_active_bg, relief=tk.FLAT,
+#                    borderwidth=2, cursor="hand2")
+# button1.pack(side=tk.LEFT, padx=20)
 
-button2 = tk.Button(button_frame, text=model2, command=button2_clicked,
-                   width=12, font=button_font, bg=button_bg, fg=button_fg,
-                   activebackground=button_active_bg, relief=tk.FLAT,
-                   borderwidth=2, cursor="hand2")
-button2.pack(side=tk.LEFT, padx=20)
+button1 = add_button(button_frame, model1, button1_clicked, button_font)
+button2 = add_button(button_frame, model2, button2_clicked, button_font)
+
 
 # 添加底部提示信息
 footer = tk.Label(root, text="选择后将自动应用并最小化", font=("Microsoft YaHei", 8),

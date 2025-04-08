@@ -41,17 +41,15 @@ def choose_esrgan(root):
         # root.deiconify()  # 重新显示主窗口
 
     # 创建两个按钮
-    button1 = tk.Button(button_frame, text=executor1, command=button1_clicked,
-                         width=12, font=button_font, bg=button_bg, fg=button_fg,
-                         activebackground=button_active_bg, relief=tk.FLAT,
-                         borderwidth=2, cursor="hand2")
-    button1.pack(side=tk.LEFT, padx=20)
+    # button1 = tk.Button(button_frame, text=executor1, command=button1_clicked,
+    #                      width=12, font=button_font, bg=button_bg, fg=button_fg,
+    #                      activebackground=button_active_bg, relief=tk.FLAT,
+    #                      borderwidth=2, cursor="hand2")
+    # button1.pack(side=tk.LEFT, padx=20)
 
-    button2 = tk.Button(button_frame, text=executor2, command=button2_clicked,
-                         width=12, font=button_font, bg=button_bg, fg=button_fg,
-                         activebackground=button_active_bg, relief=tk.FLAT,
-                         borderwidth=2, cursor="hand2")
-    button2.pack(side=tk.LEFT, padx=20)
+    button1 = add_button(button_frame, executor1, button1_clicked, button_font)
+    button2 = add_button(button_frame, executor2, button2_clicked, button_font)
+
 
     # 添加底部提示信息
     footer = tk.Label(root2, text="选择后将返回主窗口", font=("Microsoft YaHei", 8),

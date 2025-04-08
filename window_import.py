@@ -15,6 +15,28 @@ def get_fonts():
     button_font = tkfont.Font(family="Montserrat Medium", size=10)
     return title_font, button_font
 
+# 创建按钮
+def create_button(parent, text, command, font):
+    return tk.Button(
+        parent,
+        text=text,
+        command=command,
+        width=12,
+        font=font,
+        bg=button_bg,
+        fg=button_fg,
+        activebackground=button_active_bg,
+        relief=tk.FLAT,
+        borderwidth=2,
+        cursor="hand2"
+    )
+
+# 创建按钮并添加到父容器
+def add_button(parent, text, command, font):
+    btn = create_button(parent, text, command,font)
+    btn.pack(side=tk.LEFT, padx=20)
+    return btn
+
 # 窗口居中
 def center_window(win):
     win.update_idletasks()
