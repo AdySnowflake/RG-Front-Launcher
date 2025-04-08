@@ -4,7 +4,7 @@ from window_import import *
 executor1 = "Official-NCNN"
 executor2 = "Upscayl-NCNN"
 
-def choose_esrgan(root, on_choice_callback):
+def choose_esrgan(root):
     # 创建第二个窗口
     root2 = tk.Toplevel(root)
     root2.title("Real-ESRGAN 模式")
@@ -31,14 +31,12 @@ def choose_esrgan(root, on_choice_callback):
     def button1_clicked():
         messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor1} 执行器")
         # print("Hello World")
-        on_choice_callback(1)
         root2.destroy()
         root.iconify()  # 最小化主窗口
 
     def button2_clicked():
         messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor2} 执行器")
-        # print("Hello World")
-        on_choice_callback(2)
+        print("Hello World")
         root2.destroy()
         root.iconify()  # 最小化主窗口
 
