@@ -8,12 +8,10 @@ model2 = "Real-CUGAN"
 
 def launch_window(on_choice_callback):
     def button1_clicked():
-        print("Hello World")  # 模拟写入配置
         choose_esrgan(root, on_choice_callback)
 
     def button2_clicked():
         messagebox.showinfo("提示", f"你选择了 {model2} 模型")
-        # print("Hello World")
         on_choice_callback(3)
         root.iconify()  # 最小化窗口
 
@@ -53,6 +51,7 @@ def launch_window(on_choice_callback):
 
     # 运行主循环
     root.mainloop()
+
 
 if __name__ == "__main__":
     launch_window()

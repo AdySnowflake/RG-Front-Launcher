@@ -9,8 +9,7 @@ def main():
 
 
 def choice(flag):
-    print("hello world")
-    print(flag)
+    print(f"flag: {flag}")
     modify_config(flag)
     control_exe()
 

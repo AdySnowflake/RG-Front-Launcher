@@ -3,7 +3,6 @@ import time
 import psutil
 import os
 
-exe_path = r"E:\Downloads\IDM\realesrgan-gui-windows-bundled-v0.2.5.0\realesrgan-gui.exe"
 
 class ExeController:
     def __init__(self):
@@ -34,9 +33,8 @@ class ExeController:
 
 
 if __name__ == "__main__":
-
+    exe_path = r"E:\Downloads\IDM\realesrgan-gui-windows-bundled-v0.2.5.0\realesrgan-gui.exe"
     controller = ExeController()
-
-    # controller.start()
+    controller.start()
     time.sleep(5)
     controller.stop()
