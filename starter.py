@@ -3,7 +3,7 @@ import time
 import psutil
 import os
 
-exe_path = r"E:\Downloads\IDM\realesrgan-gui-windows-bundled-v0.2.5.0\realesrgan-gui.exe"
+exe_path = "./realesrgan-gui.exe"
 
 
 class ExeController:

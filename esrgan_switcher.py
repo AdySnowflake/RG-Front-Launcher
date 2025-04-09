@@ -5,7 +5,7 @@ executor1 = "Official-NCNN"
 executor2 = "Upscayl-NCNN"
 
 
-def choose_esrgan(root, on_choice_callback):
+def choose_esrgan(root):
     # 创建第二个窗口
     root2 = tk.Toplevel(root)
     root2.title("Real-ESRGAN 模式")
@@ -31,13 +31,11 @@ def choose_esrgan(root, on_choice_callback):
 
     def button1_clicked():
         messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor1} 执行器")
-        on_choice_callback(1)
         root2.destroy()
         root.iconify()  # 最小化主窗口
 
     def button2_clicked():
         messagebox.showinfo("提示", f"你选择了 Real-ESRGAN 模型\n{executor2} 执行器")
-        on_choice_callback(2)
         root2.destroy()
         root.iconify()  # 最小化主窗口
 
@@ -46,12 +44,11 @@ def choose_esrgan(root, on_choice_callback):
     button2 = add_button(button_frame, executor2, button2_clicked, button_font)
 
     # 添加底部提示信息
-    footer = tk.Label(root2, text="选择后将返回主窗口", font=("Microsoft YaHei", 8),
+    footer = tk.Label(root2, text="选择后将自动应用并退出", font=("Microsoft YaHei", 8),
                       bg=bg_color, fg="#7f8c8d")
     footer.pack(pady=10)
 
     # 居中显示窗口
-    # root.eval('tk::PlaceWindow . center')
     toplevel_with_tcl(root, root2)
     center_window(root)
 

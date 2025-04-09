@@ -1,5 +1,5 @@
-from sw2 import launch_window
-from config2 import modify_config
+from switcher import launch_window
+from configure import modify_config
 from starter import ExeController
 
 
@@ -17,7 +17,7 @@ def choice(flag):
 def control_exe():
     global first
     controller = ExeController()
-    if (first):
+    if first:
         controller.stop()
     controller.start()
 
