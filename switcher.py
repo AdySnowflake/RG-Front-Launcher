@@ -1,9 +1,15 @@
+from tkinter import messagebox
 from window_import import *
 from esrgan_switcher import choose_esrgan
 
 # 定义变量
 model1 = "Real-ESRGAN"
 model2 = "Real-CUGAN"
+
+
+def check_notice():
+    messagebox.showwarning("RG Front Launcher", "未找到 Real-ESRGAN GUI 主程序！")
+    sys.exit(0)
 
 
 def launch_window(on_choice_callback):

@@ -6,6 +6,14 @@ import os
 exe_path = "./realesrgan-gui.exe"
 
 
+def check_exist():
+    """
+    检查程序是否存在
+    :return: bool
+    """
+    return os.path.exists(exe_path)
+
+
 class ExeController:
     def __init__(self):
         self.exe_path = exe_path
