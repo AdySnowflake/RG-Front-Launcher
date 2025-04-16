@@ -1,4 +1,4 @@
-from tkinter import messagebox
+import sys
 from window_import import *
 from esrgan_switcher import choose_esrgan
 
@@ -23,7 +23,7 @@ def launch_window(on_choice_callback):
 
     # 创建主窗口
     root = tk.Tk()
-    root.title("超分模型选择")
+    root.title("RG Front Launcher")
     root.geometry("400x200")  # 窗口大小
     root.configure(bg=bg_color)
     root.resizable(False, False)  # 固定窗口大小

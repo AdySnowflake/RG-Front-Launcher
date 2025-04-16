@@ -8,7 +8,7 @@ executor2 = "Upscayl-NCNN"
 def choose_esrgan(root, on_choice_callback):
     # 创建第二个窗口
     root2 = tk.Toplevel(root)
-    root2.title("Real-ESRGAN 模式")
+    root2.title("RG Front Launcher")
     root2.geometry("400x200")
     root2.configure(bg=bg_color)
     root2.resizable(False, False)

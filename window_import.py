@@ -1,6 +1,6 @@
-import sys
 import tkinter as tk
 import tkinter.font as tkfont
+from tkinter import messagebox
 
 # 定义颜色
 bg_color = "#ffffff"  # 背景色
