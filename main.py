@@ -27,6 +27,6 @@ def control_exe():
 
 if __name__ == "__main__":
     first = 0  # 记录是否第一次运行
-    if check_exist():
+    if not check_exist():
         check_notice()
     main()
